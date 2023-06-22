@@ -1,6 +1,3 @@
 calculator.html using jquery library
 
-vanillajscalculator.html doesn't use any library, only vanilla js
-
-
-CHECKOUT ANOTHER BRANCH FOR MORE FIXES AND USING ANOTHER METHOD 
+in last_version folder no libraries was used, only vanilla js
