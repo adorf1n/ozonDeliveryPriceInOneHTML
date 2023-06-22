@@ -1,0 +1,139 @@
+
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    border: none;
+    padding: none;
+    background: none;
+    font-family: Lato, sans-serif;
+  }
+
+  .container-ozon {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .child__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #8c8c8c;
+    margin-top: 25px;
+  }
+
+  .input-ozon {
+    background: rgb(250, 250, 250);
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    box-shadow: inset 0 -1.4em 1em #00000005;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .input-ozon::placeholder{
+    font-size: 15px;
+  }
+
+  .dropdown_content {
+    position: absolute;
+    z-index: 10;
+    top: 112px;
+    width: 1140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 350px;
+    overflow-y: auto;
+    display: none;
+  }
+
+  .townButton {
+    margin: 0;
+    background-color: #fcfcfc;
+    width: 100%;
+    border: 0.2px solid rgb(246, 246, 246);
+    text-align: left;
+    font-size: 17px;
+  }
+
+  .townButton:hover{
+    background: rgb(205, 205, 205);
+  }
+
+  .townButton:active {
+    color: #fff;
+    background: #1770a6;
+  }
+
+  .totalPrice {
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 28px;
+  }
+
+  .countButton {
+    align-self: center;
+    color: #fff;
+    font-weight: 700;
+    font-family: Lato, sans-serif;
+    background-color: #1770a6;
+    font-size: 20px;
+    padding: 15px 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .price {
+    color: red;
+    font-size: 40px;
+    font-weight: 600;
+  }
+</style>
+<div class="container-ozon">
+  <h2>Калькулятор Ozon<h2>
+  <div class="child__container">
+    <h3 class="h3">Выберите город:</h3>
+    <input
+      id="town_input"
+      onclick="showTownList()"
+      class="input-ozon dropdown"
+      type="search"
+      oninput="townHandler()"
+    />
+    <div id="dropdown_content" class="dropdown_content"></div>
+  </div>
+  <div class="child__container">
+    <h3 class="h3">Введите вес от 1 до 20 000 (в гр):</h3>
+    <input
+      id="weight_input"
+      class="input-ozon"
+      placeholder = "Введите число"
+      type="number"
+      oninput="weightHandler()"
+    />
+  </div>
+  <button class="countButton" onclick="showPrice()">Рассчитать</button>
+  <div class="totalPrice">
+    <span id="total"></span>
+    <span id="totalPrice" class="price"></span> <span id="som"></span>
+  </div>
+</div>
+
+<script src="./main.js"></script>
